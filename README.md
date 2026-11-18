@@ -1,4 +1,4 @@
-# 🏠 HomeSetu — Connecting Students with the Right Place to Stay
+# 🏠 SmartHomeSetu — High-Tech Student-Centric PG Discovery & Booking Ecosystem
 
 [![React](https://img.shields.io/badge/Frontend-React.js%2019-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot%203.2-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
@@ -6,207 +6,100 @@
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Database](https://img.shields.io/badge/Database-MySQL%20%7C%20H2-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Vite](https://img.shields.io/badge/Bundler-Vite%208-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![GitHub Pages](https://img.shields.io/badge/Deployment-GitHub%20Pages-22c55e?logo=github&logoColor=white)](https://arshmittal0907.github.io/SmartHomeSetu/)
 
-> **A Student-Centric PG Discovery & Booking Platform**  
-> Direct connections between students and PG owners with **zero middlemen**, **complete transparency**, **side-by-side PG comparison**, and **verifiable Confirmation IDs**.
+> **SmartHomeSetu: High-Tech Student Accommodation & PG Management Platform**  
+> Direct peer-to-peer connection between college students and verified PG hosts with **0% brokerage**, **upfront transparent pricing**, **1-to-1 owner booking request dispatch**, **15-state AI intelligence**, and **verifiable Confirmation IDs**.
 
----
-
-## 🎯 Problem Statement & Motivation
-
-Moving to a new city for higher education starts with one crucial question: **"Where will I stay?"**
-
-1. **New City & College**: Lack of reliable, centralized PG information in student hubs (Pune, Bengaluru, Delhi, Kota).
-2. **Broker Exploitation**: Heavy dependence on unverified brokers demanding 1-2 months of unnecessary brokerage fees.
-3. **Hard to Compare**: Difficulty evaluating rent, hidden electricity rules, food inclusions, and college commute distance.
-4. **Wasted Physical Visits**: Misleading listings and uncertainty about real-time room availability.
-5. **Time & Security Risk**: Informal chats and fake listings with zero booking protection.
+🌐 **Live Global Link:** [https://arshmittal0907.github.io/SmartHomeSetu/](https://arshmittal0907.github.io/SmartHomeSetu/)
 
 ---
 
-## 🚀 HomeSetu Objectives
+## 🎯 Key Capabilities & High-Tech Features
 
-* **No Brokers, No Middlemen**: Students connect directly with verified PG owners (0% commission).
-* **Easy & Fast for Students**: Search, filter, and compare accommodations in minutes instead of days of physical visits.
-* **Complete Transparency**: Clear rent breakdown, security deposit, meal menus, and gate rules upfront.
-* **Safe & Verified Stays**: Photo-verified properties and verified owner credentials.
-* **Structured Booking Flow**: Formal `Search ➔ Filter ➔ Compare ➔ Request ➔ Owner Review ➔ Confirmation ID` lifecycle.
-* **Affordable & Convenient**: Budget-oriented filters suited to student financial constraints.
+### 1. Mandatory Role-Based Registration & Authentication
+* **Zero Synthetic Accounts:** New students and PG owners must explicitly register with their credentials (name, email, phone, college/student ID, or PG property details) before logging in.
+* **Security & Segregation:** Student portal, PG Owner portal, and Central Administrator portal maintain strict role-based access control.
+
+### 2. Verified Host Identity & 1-to-1 Booking Request Routing
+* **Owner Host Badges:** Every PG card visibly displays the verified host's name and contact information.
+* **Isolated Request Dispatch:** When a student requests a room, the booking notification routes exclusively to that specific PG host's dashboard.
+
+### 3. 15 Indian States × 15 Educational Hubs (225 Locations Directory)
+* **Master Coverage:** New PG listings feature dropdowns for 15 major Indian states and 15 renowned educational hubs per state (e.g., Kothrud, Hinjewadi, Koramangala, Indirapuram, Knowledge Park, Kota, etc.).
+* **1-Click AI Benchmark:** Instant estimation of market rent based on selected locality and room amenities.
+
+### 4. Dual Omni-AI Agents
+* **Student AI Living Advisor:** Trained across 15 states with regional food profiles, rent spectrums, curfew regulations, and boys/girls safety guidelines.
+* **Owner Market Yield Advisor:** Real-time pricing calculator, ROI advisor, and occupancy optimizer.
+
+### 5. Campus Living Tools
+* **College Commute Calculator:** Real-time transit cost and travel time estimation for walking, cycling, and public transport.
+* **Nearby Essentials Map:** Visual radar for nearby libraries, mess halls, gyms, hospitals, and ATMs.
+* **Side-by-Side Comparison:** Interactive matrix comparing up to 3 PGs across 12 distinct parameters.
 
 ---
 
-## 🔄 System Architecture & User Journey
+## 📁 Repository Structure
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Student
-    participant HomeSetu as HomeSetu Platform
-    actor Owner as PG Owner
-    
-    Student->>HomeSetu: 1. Search by City / College (e.g. Pune / COEP)
-    Student->>HomeSetu: 2. Filter by Rent (≤ ₹8,000), AC, Wi-Fi, Food
-    Student->>HomeSetu: 3. Compare top 3 PGs side-by-side
-    Student->>HomeSetu: 4. Select room & submit Booking Request
-    HomeSetu->>Owner: 5. Notify PG Owner with Student Details
-    Note over Owner: Reviews college name, phone & move-in date
-    alt Owner Approves
-        Owner->>HomeSetu: 6. Accept Request
-        HomeSetu->>HomeSetu: 7. Generate Unique Confirmation ID (HS-2026-XXXX)
-        HomeSetu-->>Student: 8. Issues Verified Booking Slip with Confirmation ID
-    else Owner Rejects
-        Owner->>HomeSetu: Decline with reason note
-        HomeSetu-->>Student: Updates status to Declined
-    end
+```text
+SmartHomeSetu/
+├── backend/                       # Spring Boot 3.2 Java Backend
+│   ├── src/main/java/             # Controllers, Entities, Repositories, Services
+│   ├── src/main/resources/        # application.properties & SQL schemas
+│   └── pom.xml                    # Maven dependencies
+├── frontend/                      # React 19 + Tailwind CSS + Vite
+│   ├── src/                       # Application components, context, and state
+│   │   ├── components/            # UI Modals, Dashboards, Cards, and AI Portals
+│   │   ├── context/               # AuthContext & Session management
+│   │   ├── statesData.js          # 15 States x 15 Localities Master Directory
+│   │   ├── featuresData.js        # Commute, reviews, essentials data models
+│   │   ├── api.js                 # Unified API client & standalone fallback
+│   │   └── App.jsx                # Main Application root
+│   ├── dist/                      # Production-ready built assets
+│   ├── package.json               # Dependencies & scripts
+│   └── vite.config.js             # Vite configuration
+├── scripts/                       # Deployment automation scripts
+│   └── deploy-ghpages.js          # 1-Click GitHub Pages deployment automation
+├── run-all.bat                    # One-click full-stack launcher
+├── run-frontend.bat               # Frontend launcher
+└── run-backend.bat                # Backend launcher
 ```
 
-> ⚠️ **Core Architectural Rule**: The **Confirmation ID** is generated **strictly after** the PG owner reviews the student profile and clicks **Accept**.
-
 ---
 
-## ✨ Key Features
-
-| Feature | Description |
-| :--- | :--- |
-| **Smart Search** | Search by student hub cities (Pune, Bengaluru, Delhi, Kota, Mumbai), localities, and landmark colleges (COEP, MIT, Symbiosis, Christ, DU). |
-| **Advanced Filters** | Real-time filtering by max rent budget, room sharing (Single/Double/Triple), gender type (Boys/Girls/Co-ed), AC, Wi-Fi, Meals, and Verified stays. |
-| **Side-by-Side PG Comparison** | Compare up to 3 PGs simultaneously across 12+ parameters (rent, deposit, amenities, food, gate timing, rules). |
-| **Live Bed Availability** | Live tracking of vacant beds and room types per property. |
-| **Structured Booking Flow** | Formal application containing move-in date, stay duration, and student college details. |
-| **Unique Confirmation ID** | Tamper-proof, cryptographically randomized booking code (e.g., `HS-2026-7842`) generated upon owner approval. |
-| **Official Booking Slip** | Downloadable / printable digital voucher with student, owner, and check-in information. |
-| **Verified Listings Badge** | Trust badge granted to verified properties and authentic owners. |
-| **Student Reviews & Ratings** | Star ratings and reviews covering cleanliness, food quality, and amenities. |
-| **Student Dashboard** | Track pending applications, view accepted vouchers, and download slips. |
-| **PG Owner Dashboard** | Manage listings, review incoming applications, accept/reject requests, and track property occupancy. |
-| **Admin Portal** | Platform statistics and one-click listing verification management. |
-
----
-
-## 🛠️ Technology Stack
-
-* **Frontend**:
-  * [React.js](https://react.dev/) (HTML5, Modern ES6+ JavaScript)
-  * [Vite 8](https://vitejs.dev/) (Lightning fast development & optimized build)
-  * [Tailwind CSS v4](https://tailwindcss.com/) (Responsive, deep teal & amber branding)
-  * [Lucide React](https://lucide.dev/) (Clean iconography)
-* **Backend**:
-  * [Spring Boot 3.2](https://spring.io/projects/spring-boot) (Java 17 RESTful APIs)
-  * [Spring Data JPA](https://spring.io/projects/spring-data-jpa) & [Hibernate](https://hibernate.org/) (ORM & persistence)
-  * [Jakarta Bean Validation](https://beanvalidation.org/) (Request validation)
-* **Databases**:
-  * **H2 In-Memory Database** (Default profile for 1-click zero-configuration testing & evaluations)
-  * **MySQL 8.0** (Production persistence profile: `application-mysql.properties`)
-
----
-
-## 🚀 Quick Start Guide
+## 🚀 Running Locally
 
 ### Prerequisites
-* **Java 17+** (JDK 17)
-* **Node.js 18+** & npm
-* **Apache Maven 3.9+** (or use system maven)
-* *(Optional)* MySQL 8.0 running on port 3306
+* **Node.js**: v20+ or v22+
+* **Java**: JDK 17 or higher
+* **Maven**: 3.8+ (optional, wrapper included)
 
----
-
-### Option 1: 1-Click Startup (Windows)
-Double-click:
-```bash
-run-all.bat
-```
-This automatically launches the Spring Boot backend on port `8088` and the Vite React frontend on port `5173`.
-
----
-
-### Option 2: Manual Terminal Startup
-
-#### 1. Backend (Spring Boot):
-```bash
-cd backend
-mvn spring-boot:run
-```
-* Backend API starts at: `http://localhost:8088/api`
-* Embedded H2 Console: `http://localhost:8088/h2-console`
-* *(To switch to MySQL)*:
-  ```bash
-  mvn spring-boot:run -Dspring-boot.run.profiles=mysql
-  ```
-
-#### 2. Frontend (React + Vite):
+### 1. Launch Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-* Open your browser at: `http://localhost:5173`
+Open [http://localhost:5173/homesetu/](http://localhost:5173/homesetu/) in your browser.
 
----
-
-## 🔑 Demo Test Accounts
-
-The platform comes pre-seeded with rich sample listings (Sunrise PG, Green Nest PG, Urban Stay) and role-based test users:
-
-| Persona | Name | Email | Password | Role |
-| :--- | :--- | :--- | :--- | :--- |
-| **Team Leader / Student** | Arsh Mittal | `arsh@homesetu.com` | `123456` | `STUDENT` |
-| **Student (COEP Pune)** | Aryan Gupta | `aryan@homesetu.com` | `123456` | `STUDENT` |
-| **Student (MIT Pune)** | Divyanshi Mittal | `divyanshi@homesetu.com` | `123456` | `STUDENT` |
-| **Student (Pune Univ)** | Manasvi Sharma | `manasvi@homesetu.com` | `123456` | `STUDENT` |
-| **PG Owner (Kothrud)** | Ramesh Kothrud | `ramesh@pgowner.com` | `123456` | `OWNER` |
-| **PG Owner (Baner)** | Sunita Patil | `sunita@pgowner.com` | `123456` | `OWNER` |
-| **Platform Admin** | Admin | `admin@homesetu.com` | `admin123` | `ADMIN` |
-
-> 💡 *Tip: You can switch between demo personas instantly in the Navbar user menu!*
-
----
-
-## 📡 REST API Reference
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/auth/login` | User authentication |
-| `POST` | `/api/auth/register` | Student or Owner registration |
-| `GET` | `/api/pgs` | Search and filter PG listings |
-| `GET` | `/api/pgs/{id}` | Detailed PG profile |
-| `GET` | `/api/pgs/{id}/rooms` | Room configurations and bed counts |
-| `POST` | `/api/pgs` | Create new PG listing (Owner) |
-| `PATCH` | `/api/pgs/{id}/verify` | Toggle listing verification (Admin) |
-| `POST` | `/api/bookings` | Submit student booking request |
-| `GET` | `/api/bookings/student/{id}` | Fetch student's booking requests |
-| `GET` | `/api/bookings/owner/{id}` | Fetch incoming requests for owner |
-| `POST` | `/api/bookings/{id}/action` | Owner Accept/Reject (Generates Confirmation ID) |
-| `GET` | `/api/bookings/confirmation/{id}` | Lookup booking by Confirmation ID |
-| `GET` | `/api/reviews/pg/{pgId}` | Fetch student reviews for a PG |
-| `POST` | `/api/reviews` | Submit new student review |
-| `GET` | `/api/admin/stats` | Platform statistics |
-
----
-
-## 🔮 Future Roadmap (Slide 9)
-
-- [ ] AI preference-based PG recommendation engine
-- [ ] Government ID & DigiLocker verification for hosts
-- [ ] Real-time student-to-owner messaging & chat
-- [ ] Interactive Map commute & distance calculator
-- [ ] Advanced analytics dashboard for universities & college hostels
-
----
-
-## 📤 Pushing to Your GitHub Repository
-
-To push this project to your GitHub account:
-
-1. Create a new repository on [GitHub](https://github.com/new) named `homesetu`.
-2. Run the following commands in the project root:
-
+### 2. Launch Backend (Optional for standalone use)
 ```bash
-git remote add origin https://github.com/aryangupta42/homesetu.git
-git branch -M main
-git push -u origin main
+cd backend
+mvn spring-boot:run
 ```
 
 ---
 
+## 🌐 Deploy to GitHub Pages
+
+To build and deploy the latest frontend to GitHub Pages:
+```bash
+node scripts/deploy-ghpages.js
+```
+The live site will update automatically at [https://arshmittal0907.github.io/SmartHomeSetu/](https://arshmittal0907.github.io/SmartHomeSetu/).
+
+---
+
 ## 📄 License
-This project is open-source and created for academic and presentation purposes by **Team ByteBros**.
+Academic and High-Tech Project Submission — Built with ❤️ for college students across India.
